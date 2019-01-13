@@ -12,7 +12,10 @@ import { removeText } from '../actions/texts';
 
 class AddTodays extends PureComponent {
   handleSubmit = event => {
-    this.props.addTodays({ todays: event.target.value });
+    this.props.addTodays({
+      todays: event.target.value,
+      date: new Date().toJSON().slice(0, 10)
+    });
     this.props.removeText(event.target.value);
   };
 

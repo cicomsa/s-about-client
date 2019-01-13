@@ -8,7 +8,7 @@ import DisplayTodaysPage from './DisplayTodays';
 class MainPage extends PureComponent {
   state = { visible: false };
 
-  handleClick = e => {
+  pageFlip = e => {
     this.setState({ visible: !this.state.visible });
   };
   render() {
@@ -16,11 +16,15 @@ class MainPage extends PureComponent {
     if (!authenticated) return <Redirect to="/login" />;
 
     return (
+      // <div className="">
+      //   <h1 className="fixed-title">~ 's about ~</h1>
+      //   <DisplayTodaysPage />
+      // </div>
       <div
         className={
           this.state.visible ? 'card-container slide-in' : 'card-container'
         }
-        onDoubleClick={this.handleClick}
+        onDoubleClick={this.pageFlip}
       >
         <div className="card-body">
           <div className="front-side">

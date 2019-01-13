@@ -47,7 +47,7 @@ class WriteTextForm extends PureComponent {
           id="todaySAbout"
           name="todays"
           label="Today's"
-          type="text"
+          type="search"
           margin="normal"
           multiline
           className={classes.TextField}

@@ -4,14 +4,15 @@ body {
   display: flex;
   justify-content: center;
   position: fixed;
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  /* height: 100%; */
 }
 
 main {
   margin-top: 60px;
   text-align: center;
   overflow: hidden;
+  width: 100vw;
 }
 
 h1 {
@@ -79,12 +80,12 @@ h1 {
   transition: opacity 1s ease-in, visibility 0.75s linear;
   box-shadow: 0 10px 35px rgba(50, 50, 93, 0.1), 0 2px 15px rgba(0, 0, 0, 0.07);
   width: 100%;
-  height: 100%;
+  height: 90vh;
 }
 
 .todays-wrapper {
   margin: 56px 20px 0;
-  height: 500px;
+  height: 70vh;
   overflow: scroll;
 }
 
