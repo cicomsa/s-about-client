@@ -44,17 +44,17 @@ h1 {
 }
 
 /*- Flipping the card -*/
-.card-container.slide-in .card-body {
+.card-container.flip-page .card-body {
   transform: rotateY(180deg);
 }
 
-.card-container.slide-in > .card-body > .front-side {
+.card-container.flip-page > .card-body > .front-side {
   opacity: 0;
   visibility: hidden;
   transition: opacity 1s ease-in 0.1s, visibility 0.75s linear 0.1s;
 }
 
-.card-container.slide-in > .card-body > .back-side {
+.card-container.flip-page > .card-body > .back-side {
   opacity: 1;
   visibility: visible;
   transition: opacity 1s ease-in 0.1s, visibility 0.75s linear 0.1s;

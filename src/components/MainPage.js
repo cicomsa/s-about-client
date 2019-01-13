@@ -8,7 +8,7 @@ import DisplayTodaysPage from './DisplayTodays';
 class MainPage extends PureComponent {
   state = { visible: false };
 
-  pageFlip = e => {
+  flipPage = e => {
     this.setState({ visible: !this.state.visible });
   };
   render() {
@@ -22,9 +22,9 @@ class MainPage extends PureComponent {
       // </div>
       <div
         className={
-          this.state.visible ? 'card-container slide-in' : 'card-container'
+          this.state.visible ? 'card-container flip-page' : 'card-container'
         }
-        onDoubleClick={this.pageFlip}
+        onDoubleClick={this.flipPage}
       >
         <div className="card-body">
           <div className="front-side">

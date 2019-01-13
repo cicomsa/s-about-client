@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { cardStyles } from './styles';
 
-class SimpleCard extends PureComponent {
+class TodaysCard extends PureComponent {
   render() {
     const { classes } = this.props;
 
@@ -26,4 +26,4 @@ class SimpleCard extends PureComponent {
   }
 }
 
-export default withStyles(cardStyles)(SimpleCard);
+export default withStyles(cardStyles)(TodaysCard);

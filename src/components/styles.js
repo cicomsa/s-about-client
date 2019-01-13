@@ -33,3 +33,20 @@ export const cardStyles = {
     width: '100%'
   }
 };
+
+export const searchBarStyles = {
+  toolbar: {
+    minHeight: 40,
+    color: 'white',
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    marginTop: 0,
+    marginBottom: 10
+  },
+  searchBar: {
+    marginLeft: 4,
+    width: '98%'
+  }
+};

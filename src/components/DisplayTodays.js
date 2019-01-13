@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { getTodays } from '../actions/todays';
-import SimpleCard from './Card';
+import TodaysCard from './TodaysCard';
 import SearchBar from './SearchBar';
 
 class DisplayTodaysPage extends PureComponent {
   state = { search: '' };
+
   componentWillMount() {
     this.props.getTodays();
   }
@@ -23,7 +24,9 @@ class DisplayTodaysPage extends PureComponent {
 
     const search = this.state.search;
     const filteredTodays = todays.filter(
-      today => today.todays.includes(search) || today.date.includes(search)
+      today =>
+        today.todays.toLowerCase().includes(search.toLowerCase()) ||
+        today.date.includes(search)
     );
 
     return (
@@ -31,7 +34,7 @@ class DisplayTodaysPage extends PureComponent {
         <div className="todays-wrapper">
           {filteredTodays.map(today => (
             <div key={today.id} className="card-wrapper">
-              <SimpleCard todays={today.todays} date={today.date} />
+              <TodaysCard todays={today.todays} date={today.date} />
             </div>
           ))}
         </div>
