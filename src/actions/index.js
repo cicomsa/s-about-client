@@ -1,0 +1,15 @@
+export const ADD_TODAYS = 'ADD_TODAYS';
+export const GET_TODAYS = 'GET_TODAYS';
+export const REMOVE_TODAYS = 'REMOVE_TODAYS';
+
+export const ADD_TEXT = 'ADD_TEXT';
+export const GET_TEXTS = 'GET_TEXTS';
+export const REMOVE_TEXT = 'REMOVE_TEXT';
+
+export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
+export const USER_LOGIN_FAILED = 'USER_LOGIN_FAILED';
+
+export const USER_LOGOUT = 'USER_LOGOUT';
+
+export const USER_SIGNUP_SUCCESS = 'USER_SIGNUP_SUCCESS';
+export const USER_SIGNUP_FAILED = 'USER_SIGNUP_FAILED';
