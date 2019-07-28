@@ -46,6 +46,7 @@ export const searchBarStyles = {
     marginBottom: 10
   },
   searchBar: {
+    backgroundColor: 'white',
     marginLeft: 4,
     width: '98%'
   }

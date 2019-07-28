@@ -25,14 +25,16 @@ class DisplayTodaysPage extends PureComponent {
     const search = this.state.search;
     const filteredTodays = todays.filter(
       today =>
-        today.todays.toLowerCase().includes(search.toLowerCase()) ||
-        today.date.includes(search)
+        today.todays !== null && (today.todays.toLowerCase().includes(search.toLowerCase()) ||
+        today.date.includes(search))
     );
 
     return (
       <div>
         <div className="todays-wrapper">
-          {filteredTodays.map(today => (
+          {filteredTodays
+            .sort((a,b) => new Date(b.date) - new Date(a.date))
+            .map(today => (
             <div key={today.id} className="card-wrapper">
               <TodaysCard todays={today.todays} date={today.date} />
             </div>

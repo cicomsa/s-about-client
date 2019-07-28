@@ -2,10 +2,6 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Checkbox from '@material-ui/core/Checkbox';
 import { checkboxStyles } from './styles';
 import { addTodays } from '../actions/todays';
 import { removeText } from '../actions/texts';
@@ -13,34 +9,29 @@ import { removeText } from '../actions/texts';
 class AddTodays extends PureComponent {
   handleSubmit = event => {
     this.props.addTodays({
-      todays: event.target.value,
+      todays: event.target.innerHTML,
       date: new Date().toJSON().slice(0, 10)
     });
-    this.props.removeText(event.target.value);
+    this.props.removeText(event.target.innerHTML);
   };
 
   render() {
-    const { classes, authenticated, texts } = this.props;
+    const { authenticated, texts } = this.props;
     if (!authenticated) return <Redirect to="/login" />;
 
     if (!texts) return null;
 
     return (
-      <List className={classes.root}>
-        {texts.map((value, i) => (
-          <ListItem
-            key={i}
-            role={undefined}
-            dense
-            button
-            onClick={this.handleSubmit}
-          >
-            <Checkbox tabIndex={-1} disableRipple value={value} />
-            <ListItemText primary={value} />
-          </ListItem>
-        ))}
-      </List>
-    );
+      <div className="texts">
+      {texts.map((value, i) => {
+        return (
+          <p key={i} onClick={e => this.handleSubmit(e)}>
+            {value}
+          </p>
+        )
+      })}
+      </div>
+    )
   }
 }
 

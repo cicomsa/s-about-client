@@ -9,6 +9,7 @@ class MainPage extends PureComponent {
   state = { visible: false };
 
   flipPage = e => {
+    console.log('hi')
     this.setState({ visible: !this.state.visible });
   };
   render() {
